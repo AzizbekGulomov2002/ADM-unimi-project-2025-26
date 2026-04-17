@@ -7,7 +7,7 @@ import time
 # Part 2.2 — Spark + GraphFrames setup
 spark = SparkSession.builder \
     .appName("ADM_GraphFrames") \
-    .config("spark.jars.packages","graphframes:graphframes:0.8.2-spark3.0-s_2.12") \
+    .config("spark.jars.packages","graphframes:graphframes:0.8.3-spark3.5-s_2.12") \
     .getOrCreate()
 spark.sparkContext.setLogLevel("ERROR")
 
