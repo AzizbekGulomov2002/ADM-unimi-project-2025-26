@@ -1,0 +1,25 @@
+# ADM project — Python dependencies
+# System prerequisites (not installed via pip):
+#   - PostgreSQL client/server (for psycopg2)
+#   - MongoDB server
+#   - Neo4j server (Bolt)
+#   - Java JDK 8+ (required for PySpark / GraphFrames)
+
+# Part 1 — PostgreSQL
+psycopg2-binary>=2.9.9
+
+# Part 1 — MongoDB
+pymongo>=4.6.0
+
+# Part 2 — Neo4j
+neo4j>=5.14.0,<7
+
+# Part 1.4 & Part 2.2 — Apache Spark (local or cluster)
+pyspark>=3.5.0,<3.6
+
+# GraphFrames Python wrapper (used by part2/spark_graphframes.py)
+# The script also sets spark.jars.packages for the GraphFrames JAR.
+graphframes>=0.6.0
+
+# Optional — report charts (generate_plots.py)
+matplotlib>=3.8.0

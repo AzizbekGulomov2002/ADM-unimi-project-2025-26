@@ -17,25 +17,37 @@ GitHub repository: [AzizbekGulomov2002/ADM-project-2025-26](https://github.com/A
 - `part2/queries_neo4j.py` -> Part 2 Neo4j queries
 - `part2/spark_graphframes.py` -> GraphFrames (PageRank + connected components)
 - `report.md` -> concise project report aligned with assignment structure
+- `requirements.txt` -> pinned Python packages for `pip install -r`
 
 ## Requirements
 
-- Python 3.10+ (your local env currently works with 3.13)
+- Python 3.10+ (tested with 3.13 locally)
 - PostgreSQL (running locally)
 - MongoDB (running locally)
 - Neo4j (running locally, Bolt enabled)
 - Java JDK 8+ (required for Spark/PySpark)
 
-## Python Packages
+## Python packages
 
-Install inside virtual environment:
+Install inside a virtual environment from the project root:
 
 ```bash
 python3 -m venv env
-source env/bin/activate
+source env/bin/activate   # Windows: env\Scripts\activate
 pip install --upgrade pip
-pip install psycopg2-binary pymongo neo4j pyspark graphframes
+pip install -r requirements.txt
 ```
+
+Package summary (see `requirements.txt` for versions):
+
+| Package | Used for |
+|---------|----------|
+| `psycopg2-binary` | PostgreSQL (`part1/setup_postgres.py`, `part1/queries_postgres.py`) |
+| `pymongo` | MongoDB (`part1/setup_mongodb.py`, `part1/queries_mongodb.py`) |
+| `neo4j` | Neo4j driver (`part2/setup_neo4j.py`, `part2/queries_neo4j.py`) |
+| `pyspark` | Spark DataFrames (`part1/spark_query2.py`, `part2/spark_graphframes.py`) |
+| `graphframes` | GraphFrames API (`part2/spark_graphframes.py`) |
+| `matplotlib` | Plots (`generate_plots.py`, optional) |
 
 ## Database Connection Notes
 
